@@ -1,0 +1,15 @@
+body {
+    height: 100dvh;
+    width: 100dvw;
+    margin: 0;
+}
+
+#root {
+    background-color: lightgrey;
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
