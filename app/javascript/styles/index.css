@@ -2,12 +2,25 @@ body {
     height: 100dvh;
     width: 100dvw;
     margin: 0;
+    overflow: hidden;
 }
 
 #root {
     background-color: lightgrey;
     height: 100%;
     width: 100%;
+}
+
+header {
+    background-color: rebeccapurple;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+header > * {
+    color: white;
+    text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
