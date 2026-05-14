@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import waldo from "../images/waldoBackground.jpeg"
-import "../styles/waldo.css"
+import waldoBackground from "../images/waldoBackground.jpeg";
+import characterWaldo from "../images/characterWaldo.webp";
+import characterOdlaw from "../images/characterOdlaw.webp";
+import "../styles/waldo.css";
 
 export default function Waldo() {
     
     const [ boxes, setBoxes ] = useState([]);
     const [ characters, setCharacters] = useState([
-        {name: "waldo", x: 1980, y: 645, image: waldo}
+        {name: "Waldo", x: 1585, y: 600, image: characterWaldo},
+        {name: "Odlaw", x: 275, y: 565, image: characterOdlaw}
     ]);
     
     function makeGuess(event, name) {
@@ -28,22 +31,24 @@ export default function Waldo() {
         } else {
             console.log(`Guess for ${name} incorrect, try again`);
         }
-
     }
 
     const rightBoxes = boxes.map((box, index) => <div style={{
-        width: "50px",
-        height: "100px",
-        border: "4px dashed #39FF14",
-        outline: "2px solid white",
-        position: "absolute",
         left: `${box.x}px`,
-        top: `${box.y}px`,
-        transform: "translate(-50%, -50%)"
-    }} key={index}></div>);
+        top: `${box.y}px`
+    }} key={index} className="correctGuess"></div>);
 
-    return(<div id="waldo" onClick={(event) => makeGuess(event, "waldo")}>
+    const possibleCharacters = characters.map((character, index) => <div className="character" key={`charcter-${index}`}>
+        <img src={character.image}></img>
+        <p>{character.name}</p>
+    </div>);
+
+    return(<div id="waldo" onClick={(event) => makeGuess(event, "Waldo")}>
         {rightBoxes}
-        <img src={waldo} alt="find waldo pic"></img>
+        <div id="possibleGuesses" style={{backgroundColor: characters.length > 0 ? "rgba(255, 255, 255, .75)" : "white"}}>
+            { characters.length > 0 ? <h2>Characters to find</h2> : <h2>All characters found!</h2> }
+            <div className="characters">{possibleCharacters}</div>
+        </div>
+        <img src={waldoBackground} alt="find waldo pic"></img>
     </div>);
 }
