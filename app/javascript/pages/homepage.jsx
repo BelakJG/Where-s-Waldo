@@ -6,6 +6,7 @@ export default function HomePage() {
             <NavLink to="/"><h1>HomePage</h1></NavLink>
             <nav>
                 <NavLink to="waldo">Waldo</NavLink>
+                <NavLink to="pokemon">Pokemon</NavLink>
             </nav>
         </header>
         <Outlet />

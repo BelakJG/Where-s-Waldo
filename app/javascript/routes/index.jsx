@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../pages/errorpage";
 import HomePage from "../pages/homepage";
 import Waldo from "../pages/waldo";
+import Pokemon from "../pages/pokemon";
 import Scores from "../pages/scores";
 
 export const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: "waldo",
                 element: <Waldo />
+            },
+            {
+                path: "pokemon",
+                element: <Pokemon />
             }
         ]
     }

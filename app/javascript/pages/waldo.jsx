@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import waldoBackground from "../images/waldoBackground.jpeg";
 import characterWaldo from "../images/characterWaldo.webp";
 import characterOdlaw from "../images/characterOdlaw.webp";

@@ -3,7 +3,8 @@ import "../styles/allScores.css";
 
 export default function Scores() {
     const [gameScores, setGameScores] = useState({
-        "Waldo": []
+        "Waldo": [],
+        "Pokemon": []
     });
     const [allScores, setAllScores] = useState([]);
     useEffect(() => {
