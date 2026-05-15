@@ -5,7 +5,6 @@ import characterOdlaw from "../images/characterOdlaw.webp";
 import characterWoof from "../images/characterWoof.webp";
 
 import GuessingGame from "../components/guessingGame";
-import "../styles/guessingGame.css";
 
 export default function Waldo() {
     const characters = [

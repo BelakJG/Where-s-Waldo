@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/guessingGame.css";
 
 export default function GuessingGame({ characterData, backgroundImage, pageName }) {
     const [ boxes, setBoxes ] = useState([]);
