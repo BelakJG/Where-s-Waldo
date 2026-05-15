@@ -3,5 +3,5 @@ class Score < ApplicationRecord
   validates :name, presence: true
   validates :time, presence: true
 
-  scope :from_game, ->(game) { where(game: game) }
+  scope :from_game, ->(game) { where(game: game) if game.present? }
 end

@@ -4,7 +4,9 @@ export default function HomePage() {
     return(<>
         <header>
             <NavLink to="/"><h1>HomePage</h1></NavLink>
-            <NavLink to="waldo">Waldo</NavLink>
+            <nav>
+                <NavLink to="waldo">Waldo</NavLink>
+            </nav>
         </header>
         <Outlet />
     </>);

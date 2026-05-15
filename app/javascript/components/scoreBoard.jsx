@@ -7,7 +7,7 @@ export default function ScoreBoard({gameName, startTime}) {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(`/api/v1/scores?game=${gameName}`);
+            const response = await fetch(`/api/v1/scores?game=${gameName}&limit=5`);
             if (!response.ok) {
                 console.error(response.status);
                 throw new Error(`Score Fetch Error: ${gameName}: ${response.status}`);

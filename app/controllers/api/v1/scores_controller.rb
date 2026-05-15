@@ -1,6 +1,6 @@
 class Api::V1::ScoresController < ApplicationController
   def index
-    scores = Score.from_game(params[:game]).order(time: :asc).limit(5)
+    scores = Score.from_game(params[:game]).order(time: :asc).limit(params[:limit] || nil)
     render json: scores
   end
 
