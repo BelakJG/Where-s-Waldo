@@ -13,5 +13,5 @@ export default function Waldo() {
         {name: "Woof", x: 1743, y: 573, image: characterWoof}
     ];
 
-    return(<GuessingGame characterData={characters} backgroundImage={waldoBackground} pageName={"waldo"} />);
+    return(<GuessingGame characterData={characters} backgroundImage={waldoBackground} pageName={"Waldo"} />);
 }

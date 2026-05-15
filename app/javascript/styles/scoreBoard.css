@@ -1,0 +1,18 @@
+#scoreBoard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #scores {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr {
+            border-bottom: 1px solid black;
+        }
+        td, th {
+            padding: 0 16px;
+        }
+    }
+}

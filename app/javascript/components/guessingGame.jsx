@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import ScoreBoard from "./scoreBoard";
 import "../styles/guessingGame.css";
 
 export default function GuessingGame({ characterData, backgroundImage, pageName }) {
@@ -9,6 +10,7 @@ export default function GuessingGame({ characterData, backgroundImage, pageName 
         x: 0,
         y: 0
     });
+    const [timeEntered] = useState(() => performance.now());
 
     function openMenu(event) {
         const gameContainer = document.getElementById("guessingGame");
@@ -62,7 +64,12 @@ export default function GuessingGame({ characterData, backgroundImage, pageName 
     return(<div id="guessingGame">
             {rightBoxes}
             <div id="possibleGuesses" style={{backgroundColor: characters.length > 0 ? "rgba(255, 255, 255, .75)" : "white"}}>
-                { characters.length > 0 ? <h2>Characters left to find</h2> : <h2>All characters found!</h2> }
+                { characters.length > 0 
+                    ? <h2>Characters left to find</h2> 
+                    : <div id="scoreBoard">
+                        <h2>All characters found!</h2>
+                        <ScoreBoard gameName={pageName} startTime={timeEntered} />
+                    </div> }
                 <div className="characters">{possibleCharacters}</div>
             </div>
             <div id="guessMenu" style={{left: menuValues.x, top: menuValues.y, display: menuValues.visible ? "flex" : "none"}}>{characterGuesses}</div>
